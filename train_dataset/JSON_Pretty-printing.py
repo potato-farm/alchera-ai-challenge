@@ -17,6 +17,7 @@ def make_path(json_file):
 def pretty_printing(json_file):
     json_data = {}
     file_path = make_path(json_file)
+
     with open(file_path, "r") as json_file:
         json_data = json.load(json_file)
 
