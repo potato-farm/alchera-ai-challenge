@@ -13,3 +13,5 @@ train_dataset/val2014
 train_dataset/*
 !train_dataset/README.MD
 !train_dataset/JSON_Pretty-printing.py
+!train_dataset/remove_images_train.ipynb
+!train_dataset/remove_images_val.ipynb
