@@ -2,6 +2,7 @@ import torch
 import numpy as np
 from tqdm import tqdm
 import albumentations as A
+import pandas as pd
 
 def test(model, data_loader, device, size):
 	model.to(device)

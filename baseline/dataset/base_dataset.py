@@ -42,7 +42,7 @@ class CustomDataset(Dataset):
             # imagename에서 확장자 떼고 .png 붙이기
             file_name = os.path.splitext(self.image_names[index])[0]
             file_name += ".png"
-            masks = cv2.imread(os.path.join(self.mask_root, file_name))
+            masks = cv2.imread(os.path.join(self.mask_root, file_name), cv2.IMREAD_GRAYSCALE)
 
             # transform -> albumentations 라이브러리 활용
             if self.transform is not None:
