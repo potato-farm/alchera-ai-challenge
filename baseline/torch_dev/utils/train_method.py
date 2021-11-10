@@ -32,8 +32,6 @@ def train(num_epochs, model, train_loader, val_loader, criterion, optimizer, sch
 
             with autocast(True):
                 outputs = model(images)
-                print(f"output shape: {outputs.shape}")
-                print(f"masks shape: {masks.shape}")
                 loss = criterion(outputs, masks)
 
             scaler.scale(loss).backward()
