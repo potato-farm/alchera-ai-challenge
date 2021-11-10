@@ -44,7 +44,6 @@ class CustomDataset(Dataset):
             file_name = os.path.splitext(self.image_names[index])[0]
             file_name += ".png"
             masks = cv2.imread(os.path.join(self.mask_root, file_name))
-            masks = cv2.cvtColor(images, cv2.COLOR_BGR2RGB) #FIXME albu issue
 
             # transform -> albumentations 라이브러리 활용
             if self.transform is not None:
