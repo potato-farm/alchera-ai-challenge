@@ -23,8 +23,8 @@ def main(custom_dir):
 
 	train_transform, val_transform = getattr(import_module(f"custom.{custom_dir}.settings.transform"), "getTransform")()
 
-	train_dataset = CustomDataset(data_dir=os.path.join(arg.image_root,arg.train_json),image_root=arg.image_root, mode='train', transform=train_transform)
-	val_dataset = CustomDataset(data_dir=os.path.join(arg.image_root,arg.val_json),image_root=arg.image_root, mode='val', transform=val_transform)
+	train_dataset = CustomDataset(image_root=arg.train_image_root, mask_root=arg.train_mask_root, mode='train', transform=train_transform)
+	val_dataset = CustomDataset(image_root=arg.val_image_root, mask_root=arg.val_mask_root, mode='val', transform=val_transform)
 
 	trainLoader, valLoader = getattr(import_module(f"custom.{custom_dir}.settings.dataloader"), "getDataloader")(
 		train_dataset, val_dataset, arg.batch, arg.train_worker, arg.valid_worker)

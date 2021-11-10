@@ -19,7 +19,7 @@ def getModel():
 			encoder_weights="imagenet",
             encoder_output_stride=32,
 			in_channels=3,
-			classes=11
+			classes=15
 		)
 	
 	return model
@@ -31,7 +31,7 @@ class SwinEncoder(torch.nn.Module, EncoderMixin):
         super().__init__()
 
         # A number of channels for each encoder feature tensor, list of integers
-        self._out_channels: List[int] = [128, 256, 512, 1024]
+        self._out_channels: List[int] = [96, 192, 384, 768]
 
         # A number of stages in decoder (in other words number of downsampling operations), integer
         # use in in forward pass to reduce number of returning features
@@ -58,17 +58,19 @@ def register_encoder():
         "imagenet": {
             "mean": [0.485, 0.456, 0.406],
             "std": [0.229, 0.224, 0.225],
-            "url": "https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_base_patch4_window12_384_22k.pth",
+            "url": "https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_small_patch4_window7_224.pth", # for small
+            # "url": "https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_tiny_patch4_window7_224.pth", # for tiny
             "input_space": "RGB",
             "input_range": [0, 1],
         },
     },
     "params": { # 기본 파라미터
-        "pretrain_img_size": 384,
-        "embed_dim": 128,
-        "depths": [2, 2, 18, 2],
-        'num_heads': [4, 8, 16, 32],
-        "window_size": 12,
+        "pretrain_img_size": 224,
+        "embed_dim": 96,
+        "depths": [2, 2, 18, 2], # for small
+        # "depths": [2, 2, 6, 2], # for tiny 
+        'num_heads': [3, 6, 12, 24], 
+        "window_size": 7,
         "drop_path_rate": 0.3,
     }
 }
