@@ -2,6 +2,7 @@ import torch
 import numpy as np
 from tqdm import tqdm
 import albumentations as A
+import pandas as pd
 
 def test(model, data_loader, device, size):
 	model.to(device)
@@ -38,8 +39,6 @@ def test(model, data_loader, device, size):
 	
 	return file_names, preds_array
 
-
-import pandas as pd
 def saveSubmission(file_names, preds_array, output_path, custom_name):
 	submission = pd.read_csv(f'{output_path}/{custom_name}/submission/sample_submission.csv', index_col=None)	
 	

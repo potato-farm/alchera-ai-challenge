@@ -6,7 +6,7 @@ def getArg():
 	arg.batch = 16
 	arg.epoch = 20
 	arg.lr = 1e-4
-	arg.seed = 21
+	arg.seed = 42
 	arg.save_capacity = 5
 	
 	arg.train_image_root = "../input/train2014"
