@@ -15,3 +15,8 @@ train_dataset/*
 !train_dataset/JSON_Pretty-printing.py
 !train_dataset/Visualize_dataset.ipynb
 !train_dataset/remove_images_updated.ipynb
+
+test_dataset/*
+
+# MMseg
+mmsegmentation/*
