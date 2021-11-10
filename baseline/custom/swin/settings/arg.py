@@ -9,10 +9,10 @@ def getArg():
 	arg.seed = 21
 	arg.save_capacity = 5
 	
-	arg.train_image_root = "../../train_dataset/train2014"
-	arg.train_mask_root = "../../train_dataset/train_mask"
-	arg.val_image_root = "../../train_dataset/val2014"
-	arg.val_mask_root = "../../train_dataset/val_mask"
+	arg.train_image_root = "../input/train2014"
+	arg.train_mask_root = "../input/train_mask"
+	arg.val_image_root = "../input/val2014"
+	arg.val_mask_root = "../input/val_mask"
 	arg.output_path = "../output"
 
 	arg.train_worker = 4
@@ -27,6 +27,5 @@ def getArg():
 	
 	arg.TTA = True
 	arg.test_batch = 4
-	arg.csv_size = 256
-
+	
 	return arg

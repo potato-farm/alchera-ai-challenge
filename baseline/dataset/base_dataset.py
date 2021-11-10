@@ -1,14 +1,13 @@
-from torch.utils.data import Dataset, DataLoader
-from pycocotools.coco import COCO
+from torch.utils.data import Dataset
 import cv2
 import os
-import numpy as np
-import tqdm
 
-category_names = ['Background', 'Body', 'RightHand', 'LeftHand',
-                    'LeftFeet', 'RightFeet', 'RightThigh', 'LeftThigh',
-                    'RightCalf', 'LeftCalf', 'LeftArm', 'RightArm', 'LeftForeArm', 'RightForeArm',
-                    'Head']
+
+category_names = [
+    'Background', 'Body', 'RightHand', 'LeftHand', 'LeftFeet', 'RightFeet', 
+    'RightThigh', 'LeftThigh', 'RightCalf', 'LeftCalf', 'LeftArm', 'RightArm', 
+    'LeftForeArm', 'RightForeArm','Head'
+    ]
 
 def get_classname(classID, cats):
     for i in range(len(cats)):
