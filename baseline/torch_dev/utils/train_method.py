@@ -7,7 +7,7 @@ from utils.save_helper import SaveHelper
 from torch.cuda.amp import GradScaler, autocast
 
 def train(num_epochs, model, train_loader, val_loader, criterion, optimizer, scheduler, saved_dir, save_capacity, device, doWandb):
-    n_class = 11
+    n_class = 15
     scaler = GradScaler(enabled=True)
 
     saveHelper = SaveHelper(save_capacity, saved_dir)
@@ -69,7 +69,7 @@ def train(num_epochs, model, train_loader, val_loader, criterion, optimizer, sch
 def validation(epoch, model, valid_loader, criterion, device, doWandb):
     model.eval()
     with torch.no_grad():
-        n_class = 11
+        n_class = 15
         total_loss = 0
         total_mIoU = 0
         cnt = 0
