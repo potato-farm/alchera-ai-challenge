@@ -1,8 +1,0 @@
-Start Training:   0%|                                                                                                                                            | 0/20 [00:00<?, ?it/s]
-  File "train.py", line 51, in <module>                                                                                                                        | 0/1653 [00:00<?, ?it/s]
-    main(custom_dir)
-  File "train.py", line 47, in main
-    train(arg.epoch, model, trainLoader, valLoader, criterion, optimizer,scheduler, outputPath, arg.save_capacity, device, arg.wandb)
-  File "/opt/ml/alchera-ai-challenge/baseline/torch_dev/utils/train_method.py", line 22, in train
-    images = torch.stack(images)
-RuntimeError: stack expects each tensor to be equal size, but got [3, 452, 640] at entry 0 and [3, 424, 640] at entry 1

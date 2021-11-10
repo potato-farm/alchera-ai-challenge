@@ -1,4 +1,0 @@
-name: alchera
-channels:
-  - defaults
-prefix: /opt/conda/envs/alchera
