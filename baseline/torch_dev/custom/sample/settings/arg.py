@@ -9,10 +9,10 @@ def getArg():
 	arg.seed = 21
 	arg.save_capacity = 5
 	
-	arg.image_root = "../input/data"
-	arg.train_json = "train_0.json"
-	arg.val_json = "valid_0.json"
-	arg.test_json = "test.json"
+	arg.train_image_root = "../../train_dataset/train2014"
+	arg.train_mask_root = "../../train_dataset/train_mask"
+	arg.val_image_root = "../../train_dataset/val2014"
+	arg.val_mask_root = "../../train_dataset/val_mask"
 	arg.output_path = "../output"
 
 	arg.train_worker = 4
@@ -20,7 +20,7 @@ def getArg():
 	arg.test_worker = 4
 
 	arg.wandb = True
-	arg.wandb_project = "segmentation"
+	arg.wandb_project = "alchera"
 	arg.wandb_entity = "cv4"
 
 	arg.custom_name = "test"

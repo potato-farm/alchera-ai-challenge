@@ -18,7 +18,7 @@ def train(num_epochs, model, train_loader, val_loader, criterion, optimizer, sch
         pbar = TQDM.makePbar(train_loader, epoch, True)
 
         hist = np.zeros((n_class, n_class))
-        for step, (images, masks, _) in enumerate(pbar):
+        for step, (images, masks) in enumerate(pbar):
             images = torch.stack(images)       
             masks = torch.stack(masks).long() 
             
@@ -32,6 +32,8 @@ def train(num_epochs, model, train_loader, val_loader, criterion, optimizer, sch
 
             with autocast(True):
                 outputs = model(images)
+                print(f"output shape: {outputs.shape}")
+                print(f"masks shape: {masks.shape}")
                 loss = criterion(outputs, masks)
 
             scaler.scale(loss).backward()
@@ -81,7 +83,7 @@ def validation(epoch, model, valid_loader, criterion, device, doWandb):
         targetStep = WandBMethod.pickImageStep(len(pbar))
         targetImages, targetOutputs, targetMasks = None, None, None
 
-        for step, (images, masks, _) in enumerate(pbar):
+        for step, (images, masks) in enumerate(pbar):
             
             images = torch.stack(images)       
             masks = torch.stack(masks).long()  

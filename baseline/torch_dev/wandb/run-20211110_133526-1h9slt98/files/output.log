@@ -1,0 +1,8 @@
+Start Training:   0%|                                                                                                                                            | 0/20 [00:00<?, ?it/s]
+  File "train.py", line 51, in <module>                                                                                                                        | 0/1653 [00:00<?, ?it/s]
+    main(custom_dir)
+  File "train.py", line 47, in main
+    train(arg.epoch, model, trainLoader, valLoader, criterion, optimizer,scheduler, outputPath, arg.save_capacity, device, arg.wandb)
+  File "/opt/ml/alchera-ai-challenge/baseline/torch_dev/utils/train_method.py", line 21, in train
+    for step, (images, masks, _) in enumerate(pbar):
+ValueError: not enough values to unpack (expected 3, got 2)

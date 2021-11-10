@@ -1,0 +1,84 @@
+wandb_version: 1
+
+TTA:
+  desc: null
+  value: true
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.12.5
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    python_version: 3.8.5
+    start_time: 1636551834
+    t:
+      1:
+      - 1
+      2:
+      - 1
+      3:
+      - 1
+      - 13
+      - 16
+      4: 3.8.5
+      5: 0.12.5
+      8:
+      - 5
+batch:
+  desc: null
+  value: 16
+csv_size:
+  desc: null
+  value: 256
+custom_name:
+  desc: null
+  value: test
+epoch:
+  desc: null
+  value: 20
+lr:
+  desc: null
+  value: 0.0001
+output_path:
+  desc: null
+  value: ../output
+save_capacity:
+  desc: null
+  value: 5
+seed:
+  desc: null
+  value: 21
+test_batch:
+  desc: null
+  value: 4
+test_worker:
+  desc: null
+  value: 4
+train_image_root:
+  desc: null
+  value: ../../train_dataset/train2014
+train_mask_root:
+  desc: null
+  value: ../../train_dataset/train_mask
+train_worker:
+  desc: null
+  value: 4
+val_image_root:
+  desc: null
+  value: ../../train_dataset/val2014
+val_mask_root:
+  desc: null
+  value: ../../train_dataset/val_mask
+valid_worker:
+  desc: null
+  value: 4
+wandb:
+  desc: null
+  value: true
+wandb_entity:
+  desc: null
+  value: cv4
+wandb_project:
+  desc: null
+  value: alchera

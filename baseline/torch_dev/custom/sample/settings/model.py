@@ -10,7 +10,7 @@ def getModel():
 			encoder_name="resnet18",
 			encoder_weights="imagenet",
 			in_channels=3,
-			classes=11
+			classes=15
 		)
 	
 	return model
