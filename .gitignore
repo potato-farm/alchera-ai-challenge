@@ -15,3 +15,7 @@ input/*
 !input/JSON_Pretty-printing.py
 !input/Visualize_dataset.ipynb
 !input/remove_images_updated.ipynb
+
+# Outputs
+output
+baseline/wandb
