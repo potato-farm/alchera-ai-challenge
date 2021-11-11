@@ -4,15 +4,9 @@ __pycache__/
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# Dataset
-input/train_mask
-input/train2014
-input/val_mask
-input/val2014
-
-
 # output
 baseline/output/
+baseline/nohup.out
 
 # wandb
 baseline/wandb/
@@ -23,3 +17,4 @@ input/*
 !input/JSON_Pretty-printing.py
 !input/Visualize_dataset.ipynb
 !input/remove_images_updated.ipynb
+!input/set_valid.sh

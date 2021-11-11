@@ -3,7 +3,7 @@ from easydict import EasyDict as eDict
 def getArg():
 	arg = eDict()
 
-	arg.batch = 32
+	arg.batch = 64
 	arg.epoch = 20
 	arg.lr = 1e-4
 	arg.seed = 21
@@ -16,14 +16,14 @@ def getArg():
 	arg.output_path = "../output"
 
 	arg.train_worker = 8
-	arg.valid_worker = 8
+	arg.valid_worker = 4
 	arg.test_worker = 4
 
 	arg.wandb = True
 	arg.wandb_project = "alchera"
 	arg.wandb_entity = "cv4"
 
-	arg.custom_name = "test"
+	arg.custom_name = "sample"
 	
 	arg.TTA = True
 	arg.test_batch = 4
