@@ -10,6 +10,12 @@ input/train2014
 input/val_mask
 input/val2014
 
+
+# output
+output/
+baseline/wandb/
+
+# train dataset
 input/*
 !input/README.MD
 !input/JSON_Pretty-printing.py
