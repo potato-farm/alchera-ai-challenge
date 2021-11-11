@@ -30,7 +30,10 @@ class WandBMethod:
 		'''
 		각 epoch당 valid가 끝난 뒤 한번 보내지는 정보들로, mmsegmentation format에 최대한 맞춰서 정보가 좀 직관적이지 않고 많음
 		'''
-		categoryDict = {i:category for i, category in enumerate(['Background','General trash','Paper','Paper pack','Metal','Glass','Plastic','Styrofoam','Plastic bag','Battery','Clothing'])}
+		categoryDict = {i:category for i, category in enumerate([
+			'Background', 'Body', 'RightHand', 'LeftHand', 'LeftFeet', 'RightFeet', 
+			'RightThigh', 'LeftThigh', 'RightCalf', 'LeftCalf', 'LeftArm', 'RightArm', 
+			'LeftForeArm', 'RightForeArm','Head'])}
 		
 		image = cls.concatImages(images)
 		output = cls.concatImages(outputs)
@@ -38,27 +41,37 @@ class WandBMethod:
 		
 		wandb.log({
 			"val/IoU.Background":clsIoU[0],
-			"val/IoU.Battery":clsIoU[10],
-			"val/IoU.Clothing":clsIoU[9],
-			"val/IoU.General trash":clsIoU[1],
-			"val/IoU.Glass":clsIoU[5],
-			"val/IoU.Metal":clsIoU[4],
-			"val/IoU.Paper":clsIoU[2],
-			"val/IoU.Paper pack":clsIoU[3],
-			"val/IoU.Plastic":clsIoU[6],
-			"val/IoU.Plastic bag":clsIoU[8],
-			"val/IoU.Styrofoam":clsIoU[7],
+			"val/IoU.Body":clsIoU[1],
+			"val/IoU.RightHand":clsIoU[2],
+			"val/IoU.LeftHand":clsIoU[3],
+			"val/IoU.RightFeet":clsIoU[5],
+			"val/IoU.LeftFeet":clsIoU[4],
+			"val/IoU.RightThigh":clsIoU[6],
+			"val/IoU.LeftThigh":clsIoU[7],
+			"val/IoU.RightCalf":clsIoU[8],
+			"val/IoU.LeftCalf":clsIoU[9],
+			"val/IoU.RightArm":clsIoU[11],
+			"val/IoU.LeftArm":clsIoU[10],
+			"val/IoU.RightForeArm":clsIoU[13],
+			"val/IoU.LeftForeArm":clsIoU[12],
+			"val/IoU.Head":clsIoU[14],
+	
 			"val/Acc.Background":clsAcc[0],
-			"val/Acc.Battery":clsAcc[10],
-			"val/Acc.Clothing":clsAcc[9],
-			"val/Acc.General trash":clsAcc[1],
-			"val/Acc.Glass":clsAcc[5],
-			"val/Acc.Metal":clsAcc[4],
-			"val/Acc.Paper":clsAcc[2],
-			"val/Acc.Paper pack":clsAcc[3],
-			"val/Acc.Plastic":clsAcc[6],
-			"val/Acc.Plastic bag":clsAcc[8],
-			"val/Acc.Styrofoam":clsAcc[7],
+			"val/Acc.Body":clsAcc[1],
+			"val/Acc.RightHand":clsAcc[2],
+			"val/Acc.LeftHand":clsAcc[3],
+			"val/Acc.RightFeet":clsAcc[5],
+			"val/Acc.LeftFeet":clsAcc[4],
+			"val/Acc.RightThigh":clsAcc[6],
+			"val/Acc.LeftThigh":clsAcc[7],
+			"val/Acc.RightCalf":clsAcc[8],
+			"val/Acc.LeftCalf":clsAcc[9],
+			"val/Acc.RightArm":clsAcc[11],
+			"val/Acc.LeftArm":clsAcc[10],
+			"val/Acc.RightForeArm":clsAcc[13],
+			"val/Acc.LeftForeArm":clsAcc[12],
+			"val/Acc.Head":clsAcc[14],
+
 			"val/aAcc":mAcc.item(),
 			"val/mAcc":clsMeanAcc.item(), #wandb 맞추는중
 			"val/mIoU":mIoU.item(),
