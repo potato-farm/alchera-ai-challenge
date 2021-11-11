@@ -5,13 +5,13 @@ __pycache__/
 .ipynb_checkpoints
 
 # Dataset
-output/train_mask
-output/train2014
-output/val_mask
-output/val2014
+input/train_mask
+input/train2014
+input/val_mask
+input/val2014
 
-output/*
-!output/README.MD
-!output/JSON_Pretty-printing.py
-!output/Visualize_dataset.ipynb
-!output/remove_images_updated.ipynb
+input/*
+!input/README.MD
+!input/JSON_Pretty-printing.py
+!input/Visualize_dataset.ipynb
+!input/remove_images_updated.ipynb
