@@ -31,14 +31,13 @@ def main(custom_dir):
 
 	model = getattr(import_module(f"custom.{custom_dir}.settings.model"), "getModel")()
 	criterion = getattr(import_module(f"custom.{custom_dir}.settings.loss"), "getLoss")()
-
 	optimizer, scheduler = getattr(import_module(f"custom.{custom_dir}.settings.opt_scheduler"), "getOptAndScheduler")(model, arg.lr)
 
 	outputPath = os.path.join(arg.output_path, arg.custom_name)
 
 	#output Path 내 설정 저장
-	shutil.copytree(f"custom/{custom_dir}",outputPath)
-	os.makedirs(outputPath+"/models")
+	# shutil.copytree(f"custom/{custom_dir}",outputPath)
+	# os.makedirs(outputPath+"/models")
 	
 	# wandb
 	if arg.wandb:
