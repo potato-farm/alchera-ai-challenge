@@ -9,6 +9,7 @@ baseline/output/
 baseline/nohup.out
 
 # wandb
+output/
 baseline/wandb/
 
 # train dataset

@@ -35,7 +35,7 @@ def main(custom_dir):
 
 	outputPath = os.path.join(arg.output_path, arg.custom_name)
 
-	#output Path 내 설정 저장
+	# output Path 내 설정 저장
 	shutil.copytree(f"custom/{custom_dir}",outputPath)
 	os.makedirs(outputPath+"/models")
 	
