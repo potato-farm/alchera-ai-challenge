@@ -12,9 +12,7 @@ input/val2014
 
 
 # output
-baseline/output/
-
-# wandb
+output/
 baseline/wandb/
 
 # train dataset
