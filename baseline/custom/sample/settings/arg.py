@@ -3,7 +3,7 @@ from easydict import EasyDict as eDict
 def getArg():
 	arg = eDict()
 
-	arg.batch = 64
+	arg.batch = 32
 	arg.epoch = 20
 	arg.lr = 1e-4
 	arg.seed = 21
