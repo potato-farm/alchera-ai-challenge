@@ -7,6 +7,7 @@ __pycache__/
 # output
 baseline/output/
 baseline/nohup.out
+baseline/inference_save
 
 # wandb
 output/

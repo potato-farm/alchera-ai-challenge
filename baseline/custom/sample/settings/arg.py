@@ -26,7 +26,7 @@ def getArg():
 	arg.custom_name = "sample"
 	
 	arg.TTA = True
-	arg.test_batch = 4
+	arg.test_batch = 1
 	arg.csv_size = 256
 
 	return arg

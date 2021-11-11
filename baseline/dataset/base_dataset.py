@@ -59,7 +59,8 @@ class CustomDataset(Dataset):
             if self.transform is not None:
                 transformed = self.transform(image=images)
                 images = transformed["image"]
-            return images
+            image_name = os.path.splitext(self.image_names[index])[0]
+            return images, image_name
     
     def __len__(self) -> int:
         # 전체 dataset의 size를 return
