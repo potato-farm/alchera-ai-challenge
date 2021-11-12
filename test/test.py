@@ -63,7 +63,7 @@ def inference(model,dataloader,savePath):
 			out = torch.nn.Upsample(size=(h,w),mode='bilinear',align_corners=True)(out)
 			mask = torch.argmax(out.squeeze(),dim=0).detach().cpu().numpy()
 			
-			for i in range(14,0,-1):
+			for i in range(14,0,-1): # TODO 이거 시각화용임 제출할땐 뺴야댐
 				mask[mask==i] = i*14
 
 			cv2.imwrite(os.path.join(savePath,imageName[0]+".png"),mask)
