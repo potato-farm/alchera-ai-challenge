@@ -22,6 +22,7 @@ input/*
 !input/JSON_Pretty-printing.py
 !input/Visualize_dataset.ipynb
 !input/remove_images_updated.ipynb
+!input/change.ipynb
 
 venv/
 !input/set_valid.sh
