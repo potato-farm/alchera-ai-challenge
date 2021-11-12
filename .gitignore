@@ -10,7 +10,6 @@ input/train2014
 input/val_mask
 input/val2014
 
-
 # output
 output/
 baseline/wandb/
@@ -21,3 +20,5 @@ input/*
 !input/JSON_Pretty-printing.py
 !input/Visualize_dataset.ipynb
 !input/remove_images_updated.ipynb
+
+venv/
