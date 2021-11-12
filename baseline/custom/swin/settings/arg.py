@@ -19,7 +19,7 @@ def getArg():
 	arg.valid_worker = 4
 	arg.test_worker = 4
 
-	arg.wandb = True
+	arg.wandb = False
 	arg.wandb_project = "alchera"
 	arg.wandb_entity = "cv4"
 
