@@ -41,8 +41,8 @@ def main(custom_dir):
 	
 	# wandb
 	if arg.wandb:
-			from utils.wandb_method import WandBMethod
-			WandBMethod.login(arg, model, criterion)
+		from utils.wandb_method import WandBMethod
+		WandBMethod.login(arg, model, criterion)
 
 	train(arg.epoch, model, trainLoader, valLoader, criterion, optimizer,scheduler, outputPath, arg.save_capacity, device, arg.wandb)
 

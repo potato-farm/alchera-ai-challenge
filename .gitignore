@@ -4,13 +4,15 @@ __pycache__/
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# Dataset
-input/train_mask
-input/train2014
-input/val_mask
-input/val2014
+# vscode
+.vscode
 
 # output
+baseline/output/
+baseline/nohup.out
+baseline/inference_save
+
+# wandb
 output/
 baseline/wandb/
 
@@ -22,3 +24,4 @@ input/*
 !input/remove_images_updated.ipynb
 
 venv/
+!input/set_valid.sh
