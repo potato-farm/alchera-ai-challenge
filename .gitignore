@@ -31,3 +31,4 @@ venv/
 
 baseline/custom/
 !baseline/custom/sample
+!baseline/custom/checkModelSize.ipynb
