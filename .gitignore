@@ -4,6 +4,9 @@ __pycache__/
 # Jupyter Notebook
 .ipynb_checkpoints
 
+# vscode
+.vscode
+
 # output
 baseline/output/
 baseline/nohup.out
