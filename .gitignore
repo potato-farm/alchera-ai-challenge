@@ -26,3 +26,8 @@ input/*
 
 venv/
 !input/set_valid.sh
+
+#custom
+
+baseline/custom/
+!baseline/custom/sample
