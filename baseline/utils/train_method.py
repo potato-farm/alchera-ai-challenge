@@ -38,6 +38,8 @@ def train(num_epochs, model, train_loader, val_loader, criterion, optimizer, sch
             scaler.step(optimizer)
             scaler.update()
 
+            scheduler.step() 
+
             # auxiliary head가 포함됐을 때 mask만 추출
             if isinstance(outputs,tuple):
                 outputs = outputs[0]    
@@ -62,7 +64,7 @@ def train(num_epochs, model, train_loader, val_loader, criterion, optimizer, sch
             saveHelper.saveModel(epoch,model,optimizer,scheduler)
 
         # Scheduler는 epoch당 step
-        scheduler.step() 
+        # scheduler.step() 
 
 def validation(epoch, model, valid_loader, criterion, device, doWandb):
     model.eval()
