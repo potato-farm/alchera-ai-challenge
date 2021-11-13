@@ -9,7 +9,7 @@ from utils.inference_method import test_and_save
 
 def getArgument():
 	parser = argparse.ArgumentParser()
-	parser.add_argument('--dir',type=str ,required=True)
+	parser.add_argument('--dir', type=str,required=True)
 	parser.add_argument('--model', type=str, required=True)
 	parser.add_argument('--data_path', type=str, required=True)
 	parser.add_argument('--save_path', type=str, required=True)
