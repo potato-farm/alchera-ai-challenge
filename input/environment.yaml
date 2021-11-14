@@ -1,4 +1,4 @@
-name: test
+name: cocoapi
 channels:
   - conda-forge
   - defaults
@@ -148,4 +148,5 @@ dependencies:
     - yacs==0.1.8
     - yaspin==2.1.0
     - zipp==3.6.0
-prefix: /opt/conda/envs/test
+    - git+https://github.com/qubvel/segmentation_models.pytorch
+prefix: /opt/conda/envs/cocoapi

@@ -4,31 +4,35 @@ __pycache__/
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# vscode
+# Vscode
 .vscode
+venv/
 
-# output
+# Output
 baseline/output/
 baseline/nohup.out
 baseline/inference_save
 
-# wandb
+# Wandb
 output/
 baseline/wandb/
 
-# train dataset
+# Train dataset
 input/*
 !input/README.MD
 !input/JSON_Pretty-printing.py
 !input/Visualize_dataset.ipynb
 !input/remove_images_updated.ipynb
 !input/change.ipynb
-
-venv/
 !input/set_valid.sh
+!input/environment.yaml
 
-#custom
-
-baseline/custom/
+# Custom
+baseline/custom/*
 !baseline/custom/sample
+!baseline/custom/deeplabv3+
 !baseline/custom/checkModelSize.ipynb
+
+# Test
+test/input
+test/output

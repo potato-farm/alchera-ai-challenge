@@ -8,6 +8,5 @@
 
 1. conda env create -f environment.yaml
 2. conda activate cocoapi
-3. apt-get install libgl1-mesa-glx
-4. chmod +x convert.sh
-5. ./convert.sh
+3. chmod +x convert.sh
+4. ./convert.sh
