@@ -47,11 +47,8 @@ class SaveHelper:
 	def saveModel(self,epoch, model, optimizer, scheduler):
 
 		saveDict = {
-			#'epoch' : epoch, 
 			'model': model.state_dict(),
-			#'optimizer' : optimizer.state_dict(),
-			#'scheduler' : scheduler,
 		}
 
 		torch.save(saveDict, self._concatSaveDirByEpoch(epoch))
-  
+		

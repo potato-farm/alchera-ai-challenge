@@ -47,7 +47,7 @@ class TQDM:
 	@classmethod
 	def setPbarPostInStep(cls, pbar, acc, clsAccMean, loss, mIoU):
 		cls._setPostfix(pbar, 
-			f"Acc: {acc.item():.2f}, AccCls: {clsAccMean.item():.2f}, Loss: {loss.item():.2f}, mIoU: {mIoU.item():.2f}")
+			f"Acc: {acc.item():.2f}, AccCls: {clsAccMean.item():.2f}, Loss: {loss.item():.2f}, mIoU: {mIoU.item():.3f}")
 
 
 	

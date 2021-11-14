@@ -38,6 +38,8 @@ def train(num_epochs, model, train_loader, val_loader, criterion, optimizer, sch
             scaler.step(optimizer)
             scaler.update()
 
+            # scheduler.step() 
+
             # auxiliary head가 포함됐을 때 mask만 추출
             if isinstance(outputs,tuple):
                 outputs = outputs[0]    
