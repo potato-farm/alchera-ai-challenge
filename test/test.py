@@ -1,11 +1,12 @@
 import torch
 from torch.utils.data.dataloader import DataLoader
 import os
+import multiprocessing
 
 MODELPATH = "./best.pth" #모델 이름
-WORKER = 4 
-TTA = False
-SIZE = (1024,1024) #resize해서 확인할건데 모델 훈련한 크기랑 같은 크기 맞추는거 추천
+WORKER = multiprocessing.cpu_count()//2
+TTA = True
+SIZE = (512,512) #resize해서 확인할건데 모델 훈련한 크기랑 같은 크기 맞추는거 추천
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -20,7 +21,7 @@ def getArgument():
 	return args.data_path, args.save_path
 
 def loadDataset(dataPath):
-	from base_dataset import CustomDataset
+	from dataset.base_dataset import CustomDataset
 	from albumentations.pytorch import ToTensorV2
 	import albumentations as A
 
@@ -33,7 +34,7 @@ def loadDataset(dataPath):
 	return dataset
 
 def loadModelWeight():
-	from model import getModel
+	from deeplabv3plus.settings.model import getModel
 	model = getModel()
 	model.load_state_dict(torch.load(MODELPATH,map_location=DEVICE)['model'])
 	return model
@@ -42,9 +43,8 @@ def wrapTTAModel(model):
 	import ttach as tta
 	tta_transform = tta.Compose(
     [
-        # tta.HorizontalFlip(), #개구림
-        # tta.Rotate90(angles=[0, 180]), #구릴듯
-        tta.Multiply(factors=[0.9, 1, 1.1]),    #밝기    
+        tta.Scale(scales=[0.5, 0.75, 1, 1.25, 1.5]),
+        tta.Multiply(factors=[0.9, 1, 1.1]),   
     ])
 	
 	return tta.SegmentationTTAWrapper(model, tta_transform)
@@ -62,10 +62,7 @@ def inference(model,dataloader,savePath):
 			out = model(image.to(DEVICE))
 			out = torch.nn.Upsample(size=(h,w),mode='bilinear',align_corners=True)(out)
 			mask = torch.argmax(out.squeeze(),dim=0).detach().cpu().numpy()
-			
-			for i in range(14,0,-1): # TODO 이거 시각화용임 제출할땐 뺴야댐
-				mask[mask==i] = i*14
-
+		
 			cv2.imwrite(os.path.join(savePath,imageName[0]+".png"),mask)
 			
 if __name__=="__main__":
