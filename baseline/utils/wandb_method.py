@@ -112,7 +112,7 @@ class WandBMethod:
 		for i in range(0,squareSide*squareSide,squareSide):
 			imgList = []
 			for j in range(i,i+squareSide):
-				if images[j].shape == (512,512): # mask의 경우 채널이 1개이기 때문에 따로 정제 필요
+				if len(images[j].shape) == 2: # mask의 경우 채널이 1개이기 때문에 따로 정제 필요
 					nowImage = np.expand_dims(images[j],axis=2) 
 				else:
 					nowImage = np.transpose(images[j],(1,2,0)) # tensor -> cv2 포맷으로 변경
