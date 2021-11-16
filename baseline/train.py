@@ -36,6 +36,11 @@ def main(custom_dir):
 	outputPath = os.path.join(arg.output_path, arg.custom_name)
 
 	# output Path 내 설정 저장
+	i = 2
+	while os.path.exists(outputPath):
+		outputPath = outputPath + "_" + str(i)
+		i += 1
+	
 	shutil.copytree(f"custom/{custom_dir}",outputPath)
 	os.makedirs(outputPath+"/models")
 	

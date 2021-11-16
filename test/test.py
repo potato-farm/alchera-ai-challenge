@@ -1,3 +1,4 @@
+from albumentations.core.serialization import save
 import torch
 from torch.utils.data.dataloader import DataLoader
 import os
@@ -73,7 +74,12 @@ if __name__=="__main__":
 	model = loadModelWeight()
 	if TTA:
 		model = wrapTTAModel(model)
-	
+
+	i = 2
+	while os.path.exists(savePath):
+		savePath = savePath + "_" + str(i)
+        i += 1
+
 	os.makedirs(savePath, exist_ok=True)
 	
 	inference(model, dataloader, savePath)
