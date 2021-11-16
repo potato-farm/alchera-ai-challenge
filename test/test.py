@@ -75,10 +75,12 @@ if __name__=="__main__":
 	if TTA:
 		model = wrapTTAModel(model)
 
+	temp = savePath
 	i = 2
 	while os.path.exists(savePath):
 		savePath = savePath + "_" + str(i)
         i += 1
+	savePath = temp
 
 	os.makedirs(savePath, exist_ok=True)
 	

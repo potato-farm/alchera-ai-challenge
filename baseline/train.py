@@ -36,10 +36,12 @@ def main(custom_dir):
 	outputPath = os.path.join(arg.output_path, arg.custom_name)
 
 	# output Path 내 설정 저장
+	temp = outputPath
 	i = 2
-	while os.path.exists(outputPath):
-		outputPath = outputPath + "_" + str(i)
+	while os.path.exists(temp):
+		temp = outputPath + "_" + str(i)
 		i += 1
+	outputPath=temp
 	
 	shutil.copytree(f"custom/{custom_dir}",outputPath)
 	os.makedirs(outputPath+"/models")
@@ -47,6 +49,7 @@ def main(custom_dir):
 	# wandb
 	if arg.wandb:
 		from utils.wandb_method import WandBMethod
+		arg['dir_name'] = outputPath
 		WandBMethod.login(arg, model, criterion)
 
 	train(arg.epoch, model, trainLoader, valLoader, criterion, optimizer,scheduler, outputPath, arg.save_capacity, device, arg.wandb)
