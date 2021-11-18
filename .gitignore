@@ -26,3 +26,5 @@ input/*
 
 venv/
 !input/set_valid.sh
+
+train_dataset(update).zip
