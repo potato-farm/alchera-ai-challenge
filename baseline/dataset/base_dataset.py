@@ -14,7 +14,6 @@ def get_classname(classID, cats):
         if cats[i]['id']==classID:
             return cats[i]['name']
     return "None"
-
 class CustomDataset(Dataset):
     """COCO format"""
     image_names = []
@@ -42,7 +41,7 @@ class CustomDataset(Dataset):
             # imagename에서 확장자 떼고 .png 붙이기
             file_name = os.path.splitext(self.image_names[index])[0]
             if self.mode == 'train':
-                file_name += ".png"
+                file_name += ".grayscale.png"
             if self.mode == 'val':
                 file_name += ".grayscale.png"
             masks = cv2.imread(os.path.join(self.mask_root, file_name), cv2.IMREAD_GRAYSCALE)

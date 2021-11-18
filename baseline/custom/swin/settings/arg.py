@@ -3,10 +3,10 @@ from easydict import EasyDict as eDict
 def getArg():
 	arg = eDict()
 
-	arg.batch = 16
+	arg.batch = 30
 	arg.epoch = 20
 	arg.lr = 1e-4
-	arg.seed = 42
+	arg.seed = 21
 	arg.save_capacity = 5
 	
 	arg.train_image_root = "../input/train2014"
@@ -15,17 +15,17 @@ def getArg():
 	arg.val_mask_root = "../input/val_mask"
 	arg.output_path = "../output"
 
-	arg.train_worker = 4
-	arg.valid_worker = 4
-	arg.test_worker = 4
+	arg.train_worker = 8
+	arg.valid_worker = 8
+	arg.test_worker = 8
 
 	arg.wandb = True
 	arg.wandb_project = "alchera"
 	arg.wandb_entity = "cv4"
 
-	arg.custom_name = "test"
+	arg.custom_name = "test3"
 	
 	arg.TTA = True
-	arg.test_batch = 4
+	arg.test_batch = 1
 	
 	return arg

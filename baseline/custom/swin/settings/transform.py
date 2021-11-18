@@ -6,11 +6,6 @@ import ttach as tta
 def getTransform():
 
   train_transform = A.Compose([
-                              A.OneOf([
-                                A.Flip(p=1.0),
-                                A.RandomRotate90(p=1.0),
-                                A.ShiftScaleRotate(p=1.0),
-                              ], p=0.75),
                               A.RandomBrightnessContrast(brightness_limit=0.1, contrast_limit=0.15, p=0.5),
                               A.GaussNoise(p=0.3),
                               A.OneOf([
@@ -41,8 +36,6 @@ def getInferenceTransform():
                             ])
   tta_transform = tta.Compose(
     [
-        tta.HorizontalFlip(),
-        tta.Rotate90(angles=[0, 180]),
         tta.Scale(scales=[1, 2, 4]),
         tta.Multiply(factors=[0.9, 1, 1.1]),        
     ]
