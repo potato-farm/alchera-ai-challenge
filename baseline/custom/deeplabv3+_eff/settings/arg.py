@@ -9,10 +9,10 @@ def getArg():
 	arg.seed = 42
 	arg.save_capacity = 5
 	
-	arg.train_image_root = "../input/train2014"
-	arg.train_mask_root = "../input/train_mask"
-	arg.val_image_root = "../input/val2014"
-	arg.val_mask_root = "../input/val_mask"
+	arg.train_image_root = "../input/val2014"
+	arg.train_mask_root = "../input/val_mask"
+	arg.val_image_root = "../input/test"
+	arg.val_mask_root = "../input/test_mask"
 	arg.output_path = "../output"
 
 	arg.train_worker = 8
@@ -23,7 +23,7 @@ def getArg():
 	arg.wandb_project = "alchera"
 	arg.wandb_entity = "cv4"
 
-	arg.custom_name = "deeplabv3_3"
+	arg.custom_name = "deeplabv3_4"
 	
 	arg.TTA = True
 	arg.test_batch = 1
