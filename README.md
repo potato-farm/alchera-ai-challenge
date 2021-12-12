@@ -11,7 +11,7 @@
 
 ## 🏆 LB Score
 
-- LB : 0.6732 mIoU 4rd
+- LB : 0.6732 mIoU 4th
 
 </br>
 
